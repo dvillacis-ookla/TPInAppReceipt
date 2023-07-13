@@ -72,12 +72,8 @@ public class InAppReceipt
 		self.receipt = try _InAppReceipt(rawData: receiptData)
 		self.rawData = receiptData
 		
-		#if DEBUG
-		let certificateName = "StoreKitTestCertificate"
-		#else
 		let certificateName = "AppleIncRootCertificate"
-		#endif
-		
+        
 		self.rootCertificatePath = rootCertPath ?? Bundle.lookUp(forResource: certificateName, ofType: "cer")
     }
 }
